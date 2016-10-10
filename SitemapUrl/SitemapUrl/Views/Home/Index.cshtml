@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="background-color:whitesmoke">
+    <div style="border-bottom:solid;border-bottom-color:darkgray" class="h2 col-lg-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-xs-6 col-sm-6 col-xs-offset-3 col-sm-offset-3">
+        <h2 style="margin-top:50px;margin-bottom:20px" class="h2">Построение карты сайта</h2>
+        <div title="Введите http://xxx.xx">
+            <label class="label label-default">Исходный адрес</label>
+            <input id="url" class="input-lg text-center" />
+            <input type="button" id="sendUrl" class="btn-lg btn btn-default col-lg-offset-5" value="Построить карту сайта" />
+        </div>
+    </div>
+    <div>
+        @Html.Action("History", "Home")
+    </div>
+    @*<div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">*@
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+        <div id="fast" style="width:100px;background-color:forestgreen;vertical-align:bottom;display:inline-block;"></div>
+        <div id="mid" style="width:100px;background-color:darkcyan; vertical-align:bottom;display:inline-block;">
+        </div>
+        <div id="slow" style="width:100px;background-color:darkred; vertical-align:bottom;display:inline-block;">
+        </div>
+        <div style="margin-top:10px">
+            <span style="color:forestgreen" class="text-info">С высокой скоростью</span><br />
+            <span style="color:darkcyan" class="text-info">Со средней скоростью</span><br />
+            <span style="color:darkred" class="text-info ">С низкой скоростью</span>
+        </div>
+
+    </div>
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+        <table id="table" style="float:left" class="table-bordered table table-hover"></table>
+    </div>
+</div>
+@section scripts{
+    <script src="~/signalr/hubs/"></script>
+}

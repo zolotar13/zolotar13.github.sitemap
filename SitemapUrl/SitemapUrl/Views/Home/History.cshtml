@@ -1,0 +1,14 @@
+﻿@model IList<SitemapUrl.Models.ParentUrl>
+
+<div id="historyDiv" class="col-lg-3 col-lg-offset-9 col-md-3 col-md-offset-9  col-xs-12 col-sm-12">
+    <label class="label label-default">История</label>
+    <select class="form-control">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <option value="@Model[i].ParentId">@Model[i].Url</option>
+        }
+    </select>
+
+    <input type="button" id="loadHistory" value="Загрузить историю" class="btn btn-default btn-group-sm" />
+    <input type="button" id="removeHistory" value="Очистить историю" class="btn btn-warning btn-group-sm" />
+</div>
